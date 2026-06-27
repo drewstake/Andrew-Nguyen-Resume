@@ -1,0 +1,154 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[protrusion=true]{microtype}
+\usepackage{anyfontsize}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\linespread{1.04}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\bulletfontsizer}{\fontsize{11.3pt}{13.8pt}\selectfont}
+\newcommand{\resumeItem}[1]{\item {\begingroup \bulletfontsizer #1\par\endgroup \vspace{-2pt}}}
+\newcommand{\resumeClientGroup}[1]{%
+  \item[]\vspace{3pt}
+  \hspace*{-\leftmargin}\begin{minipage}{\dimexpr\linewidth+\leftmargin\relax}
+  #1
+  \end{minipage}\vspace{-8pt}
+}
+\newcommand{\resumeClientTitle}[3]{{\begingroup \bulletfontsizer
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{#3} \\
+    \textit{#2} & \\
+  \end{tabularx}\par\endgroup}\vspace{-2pt}}
+\newcommand{\resumeClientItemListStart}{\begin{itemize}[leftmargin=0.32in, label={\textbullet}, labelsep=0.55em, itemsep=0pt, topsep=0pt, parsep=0pt]}
+\newcommand{\resumeClientItemListEnd}{\end{itemize}\vspace{6pt}}
+\newcommand{\resumeClientItemListEndLast}{\end{itemize}\vspace{-6pt}}
+\newcommand{\skillsfontsizer}{\fontsize{10.6pt}{12.8pt}\selectfont}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+    \item
+    \begin{tabularx}{0.97\textwidth}{X r}
+      #1 & #2 \\
+    \end{tabularx}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Andrew Nguyen} \\[-2pt]
+    \href{tel:+14452008660}{(445)~200-8660} $|$
+    \href{mailto:drewstake3@gmail.com}{\underline{drewstake3@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/drewstake/}{\underline{linkedin.com/in/drewstake}} $|$
+    \href{https://github.com/drewstake}{\underline{github.com/drewstake}}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Pennsylvania State University}{\textbf{Graduated: December 2025}}
+    {Bachelor of Science in Computer Science}{\textbf{GPA: 3.6}}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Innovative Owl Technology}{\textbf{Apr 2026 -- Present}}
+    {Software Developer}{}
+    \resumeItemListStart
+      \resumeItem{Develop \textbf{production features} across HR Healthcare web workflows and Carter Lumber mobile apps, from requirements through implementation, testing, PR review, and release}
+      \resumeItem{Resolve \textbf{production-facing bugs} across Django/Vue and Flutter products, documenting test steps, edge cases, and validation notes for reviewer sign-off}
+      \resumeClientGroup{
+        \resumeClientTitle{Client: HR Healthcare}{Full-Stack Software Developer}{Django \textbar{} Vue \textbar{} Python \textbar{} JavaScript}
+        \resumeClientItemListStart
+        \resumeItem{Shipped production features for \textbf{OrderPlatform}, a healthcare ordering platform supporting intake teams, clinic portals, patient services, approvals, renewals, document requests, and change-request workflows}
+        \resumeItem{Delivered \textbf{100+ merged PRs} across Django APIs, Vue workflows, production bug fixes, and backend/frontend tests during a high-volume release cycle}
+        \resumeClientItemListEnd
+        \resumeClientTitle{Client: Carter Lumber}{Mobile Software Developer}{Flutter \textbar{} Dart \textbar{} Firebase \textbar{} Firestore}
+        \resumeClientItemListStart
+        \resumeItem{Developed Flutter features for Carter Lumber apps, including employee news/settings, \textbf{store and parcel locators}, and vehicle document workflows}
+        \resumeItem{Implemented \textbf{Firestore-backed Google Maps workflows} for stores and parcels with address, POS, and parcel search, custom pins, detail views, directions, email sharing, and contact actions}
+        \resumeItem{Delivered \textbf{vehicle document workflows} with QR/search, PDF viewing, signature capture, scan-to-email, Smartsheet integration, Firebase storage, and local caching}
+        \resumeClientItemListEndLast
+      }
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+    {\textbf{TopSignal} \,|\, \href{https://github.com/drewstake/TopSignal}{\underline{GitHub}}}
+    {\textbf{React \textbar{} TypeScript \textbar{} FastAPI \textbar{} PostgreSQL}}
+\resumeItemListStart
+  \resumeItem{Built a \textbf{full-stack trading analytics workspace} with a FastAPI backend that syncs ProjectX/Topstep account and execution data into PostgreSQL}
+  \resumeItem{Implemented dashboards, trade review, journaling, expense/payout tracking, and \textbf{AI recap workflows} that surface trading strengths, mistakes, risk patterns, and improvement areas}
+  \resumeItem{Used TopSignal to analyze account performance, track payouts and expenses, and identify \textbf{recurring risk patterns} across accounts}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \item{\begingroup \skillsfontsizer
+   \textbf{Languages}{: Python, C/C++, Java, JavaScript, TypeScript, Dart, SQL (PostgreSQL), HTML/CSS} \\
+   \textbf{Frameworks}{: Django, Vue, Flutter, React, FastAPI, Node.js, Express, Tailwind CSS} \\
+   \textbf{Databases}{: Firebase Firestore, MongoDB Atlas (Mongoose), PostgreSQL} \\
+   \textbf{DevOps \& Tools}{: Git, Docker, Firebase, Firebase Cloud Messaging, Vite} \\
+   \textbf{Testing}{: Pytest, Vitest, Jest, React Testing Library}
+  \par\endgroup}
+\end{itemize}
+
+\end{document}
